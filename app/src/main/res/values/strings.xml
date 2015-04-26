@@ -1,5 +1,9 @@
 <resources>
   <string name="app_name">ManualLayoutTransitions</string>
 
-  <string name="hello_world">Hello world!</string>
+  <string name="type_here">Type here</string>
+  <string name="clear_input">Clear Input</string>
+  <string name="done">Done</string>
+  <string name="sample_language">English</string>
+  <string name="sample_translation">My hovercraft is full of eels.</string>
 </resources>

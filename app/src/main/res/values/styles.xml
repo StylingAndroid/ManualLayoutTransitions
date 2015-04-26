@@ -1,8 +1,40 @@
 <resources>
 
   <!-- Base application theme. -->
-  <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-    <!-- Customize your theme here. -->
+  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/sa_green</item>
+    <item name="colorPrimaryDark">@color/sa_green_dark</item>
+    <item name="colorAccent">@color/sa_green</item>
+    <item name="android:editTextBackground">@null</item>
+    <item name="editTextBackground">@null</item>
   </style>
 
+  <style name="Widget">
+  </style>
+
+  <style name="Widget.TextView">
+    <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    <item name="android:textSelectHandleLeft">?android:attr/textSelectHandleLeft</item>
+    <item name="android:textSelectHandleRight">?android:attr/textSelectHandleRight</item>
+    <item name="android:textSelectHandle">?android:attr/textSelectHandle</item>
+    <item name="android:textEditPasteWindowLayout">?android:attr/textEditPasteWindowLayout</item>
+    <item name="android:textEditNoPasteWindowLayout">?android:attr/textEditNoPasteWindowLayout</item>
+    <item name="android:textEditSidePasteWindowLayout">?android:attr/textEditSidePasteWindowLayout</item>
+    <item name="android:textEditSideNoPasteWindowLayout">?android:attr/textEditSideNoPasteWindowLayout</item>
+    <item name="android:textEditSuggestionItemLayout">?android:attr/textEditSuggestionItemLayout</item>
+    <item name="android:textCursorDrawable">?android:attr/textCursorDrawable</item>
+  </style>
+
+  <style name="Widget.TextView.Label" parent="Widget.TextView">
+    <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
+  </style>
+
+  <style name="Widget.TextView.Translation" parent="Widget.TextView">
+    <item name="android:textAppearance">?android:attr/textAppearanceLargeInverse</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Widget.TextView.Input" parent="Widget.TextView">
+    <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+  </style>
 </resources>
