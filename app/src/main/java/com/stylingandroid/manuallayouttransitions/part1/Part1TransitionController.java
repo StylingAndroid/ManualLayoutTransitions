@@ -14,14 +14,14 @@ import java.lang.ref.WeakReference;
 @SuppressWarnings("Unused")
 public class Part1TransitionController extends TransitionController {
 
+    Part1TransitionController(WeakReference<Activity> mainActivityWeakReference, AnimatorBuilder animatorBuilder) {
+        super(mainActivityWeakReference, animatorBuilder);
+    }
+
     public static TransitionController newInstance(Activity activity) {
         WeakReference<Activity> mainActivityWeakReference = new WeakReference<>(activity);
         AnimatorBuilder animatorBuilder = AnimatorBuilder.newInstance(activity);
         return new Part1TransitionController(mainActivityWeakReference, animatorBuilder);
-    }
-
-    Part1TransitionController(WeakReference<Activity> mainActivityWeakReference, AnimatorBuilder animatorBuilder) {
-        super(mainActivityWeakReference, animatorBuilder);
     }
 
     @Override

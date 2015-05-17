@@ -9,8 +9,7 @@
     <item name="editTextBackground">@null</item>
   </style>
 
-  <style name="Widget">
-  </style>
+  <style name="Widget" />
 
   <style name="Widget.TextView">
     <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>

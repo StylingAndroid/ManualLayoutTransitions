@@ -11,13 +11,13 @@ public class AnimatorBuilder {
 
     private final int duration;
 
+    AnimatorBuilder(int duration) {
+        this.duration = duration;
+    }
+
     public static AnimatorBuilder newInstance(Context context) {
         int duration = context.getResources().getInteger(android.R.integer.config_mediumAnimTime);
         return new AnimatorBuilder(duration);
-    }
-
-    AnimatorBuilder(int duration) {
-        this.duration = duration;
     }
 
     public Animator buildTranslationYAnimator(View view, int startY, int endY) {
