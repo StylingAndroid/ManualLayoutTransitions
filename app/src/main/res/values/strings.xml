@@ -1,6 +1,5 @@
 <resources>
   <string name="app_name">ManualLayoutTransitions</string>
-  <string name="app_name_part2">ManualLayoutTransitions Part 2</string>
 
   <string name="type_here">Type here</string>
   <string name="clear_input">Clear Input</string>
