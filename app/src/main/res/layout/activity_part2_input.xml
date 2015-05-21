@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:clipChildren="false"
+  android:orientation="vertical">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <View
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="?attr/colorPrimary" />
+
+    <View
+      android:id="@+id/focus_holder"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:focusableInTouchMode="true" />
+
+    <android.support.v7.widget.CardView
+      android:id="@+id/input_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentTop="true"
+      android:layout_marginBottom="?attr/actionBarSize">
+
+      <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textMultiLine">
+
+        <requestFocus />
+      </EditText>
+
+      <ImageView
+        android:id="@+id/input_done"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_alignBottom="@id/input"
+        android:layout_alignEnd="@id/input"
+        android:layout_alignRight="@id/input"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="8dp"
+        android:background="@drawable/done_background"
+        android:contentDescription="@string/done"
+        android:padding="2dp"
+        android:src="@drawable/ic_arrow_forward"
+        android:visibility="visible" />
+    </android.support.v7.widget.CardView>
+
+  </RelativeLayout>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <android.support.v7.widget.CardView
+      android:id="@+id/translation"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp"
+      android:visibility="invisible">
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="?attr/colorPrimary" />
+    </android.support.v7.widget.CardView>
+  </FrameLayout>
+
+</LinearLayout>
