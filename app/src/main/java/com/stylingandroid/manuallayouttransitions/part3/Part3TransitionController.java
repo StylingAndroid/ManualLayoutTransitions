@@ -3,7 +3,6 @@ package com.stylingandroid.manuallayouttransitions.part3;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 
 import com.stylingandroid.manuallayouttransitions.AnimatorBuilder;
 import com.stylingandroid.manuallayouttransitions.R;
@@ -41,9 +40,6 @@ public class Part3TransitionController extends TransitionController {
         View inputDone = parent.findViewById(R.id.input_done);
         View translation = parent.findViewById(R.id.translation);
 
-        TransitionAnimator transitionAnimator = TransitionAnimator.newInstance(parent, inputView, inputDone, translation);
-
-        ViewTreeObserver viewTreeObserver = parent.getViewTreeObserver();
-        viewTreeObserver.addOnPreDrawListener(transitionAnimator);
+        TransitionAnimator.begin(parent, inputView, inputDone, translation);
     }
 }

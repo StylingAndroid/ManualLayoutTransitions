@@ -14,21 +14,23 @@ import com.stylingandroid.manuallayouttransitions.AnimatorBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransitionAnimator implements ViewTreeObserver.OnPreDrawListener {
+public final class TransitionAnimator implements ViewTreeObserver.OnPreDrawListener {
     private final ViewGroup parent;
     private final SparseArray<ViewState> startStates;
     private final AnimatorBuilder animatorBuilder;
 
-    TransitionAnimator(AnimatorBuilder animatorBuilder, ViewGroup parent, SparseArray<ViewState> startStates) {
+    public static void begin(ViewGroup parent, View... views) {
+        SparseArray<ViewState> startStates = buildViewStates(views);
+        AnimatorBuilder animatorBuilder = AnimatorBuilder.newInstance(parent.getContext());
+        final TransitionAnimator transitionAnimator = new TransitionAnimator(animatorBuilder, parent, startStates);
+        ViewTreeObserver viewTreeObserver = parent.getViewTreeObserver();
+        viewTreeObserver.addOnPreDrawListener(transitionAnimator);
+    }
+
+    private TransitionAnimator(AnimatorBuilder animatorBuilder, ViewGroup parent, SparseArray<ViewState> startStates) {
         this.animatorBuilder = animatorBuilder;
         this.parent = parent;
         this.startStates = startStates;
-    }
-
-    public static TransitionAnimator newInstance(ViewGroup parent, View... views) {
-        SparseArray<ViewState> startStates = buildViewStates(views);
-        AnimatorBuilder animatorBuilder = AnimatorBuilder.newInstance(parent.getContext());
-        return new TransitionAnimator(animatorBuilder, parent, startStates);
     }
 
     private static SparseArray<ViewState> buildViewStates(View... views) {
