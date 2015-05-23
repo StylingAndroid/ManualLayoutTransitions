@@ -2,19 +2,19 @@ package com.stylingandroid.manuallayouttransitions.part3;
 
 import android.view.View;
 
-public class ViewState {
+public final class ViewState {
     private final int top;
     private final int visibility;
-
-    public ViewState(int top, int visibility) {
-        this.top = top;
-        this.visibility = visibility;
-    }
 
     public static ViewState ofView(View view) {
         int top = view.getTop();
         int visibility = view.getVisibility();
         return new ViewState(top, visibility);
+    }
+
+    private ViewState(int top, int visibility) {
+        this.top = top;
+        this.visibility = visibility;
     }
 
     public boolean hasMovedVertically(View view) {
