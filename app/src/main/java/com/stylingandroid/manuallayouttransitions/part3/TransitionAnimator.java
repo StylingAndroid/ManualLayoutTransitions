@@ -22,7 +22,7 @@ public final class TransitionAnimator implements ViewTreeObserver.OnPreDrawListe
     public static void begin(ViewGroup parent, View... views) {
         SparseArray<ViewState> startStates = buildViewStates(views);
         AnimatorBuilder animatorBuilder = AnimatorBuilder.newInstance(parent.getContext());
-        final TransitionAnimator transitionAnimator = new TransitionAnimator(animatorBuilder, parent, startStates);
+        TransitionAnimator transitionAnimator = new TransitionAnimator(animatorBuilder, parent, startStates);
         ViewTreeObserver viewTreeObserver = parent.getViewTreeObserver();
         viewTreeObserver.addOnPreDrawListener(transitionAnimator);
     }
